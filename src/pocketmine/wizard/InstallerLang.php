@@ -21,6 +21,7 @@ class InstallerLang{
 	private $langfile;
 
 	public function __construct($lang = ""){
+		if(file_exists(\pocketmine\PATH . "src/pocketmine/lang/base/" . $lang . ".ini")){
 			$this->lang = $lang;
 			$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/base/" . $lang . ".ini";
 		}else{
