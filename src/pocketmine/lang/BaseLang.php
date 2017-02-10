@@ -21,7 +21,7 @@ class BaseLang{
 		$this->langName = strtolower($lang);
 
 		if($path === null){
-			$path = \pocketmine\PATH . "src/pocketmine/lang/locale/";
+			$path = \pocketmine\PATH . "src/pocketmine/lang/base/";
 		}
 
 		$this->loadLang($path . $this->langName . ".ini", $this->lang);

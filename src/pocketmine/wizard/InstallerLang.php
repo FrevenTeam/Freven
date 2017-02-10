@@ -21,12 +21,12 @@ class InstallerLang{
 	private $langfile;
 
 	public function __construct($lang = ""){
-		if(file_exists(\pocketmine\PATH . "src/pocketmine/lang/Installer/" . $lang . ".ini")){
+		if(file_exists(\pocketmine\PATH . "src/pocketmine/lang/base/" . $lang . ".ini")){
 			$this->lang = $lang;
-			$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/Installer/" . $lang . ".ini";
+			$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/base/" . $lang . ".ini";
 		}else{
 			$files = [];
-			foreach(new \DirectoryIterator(\pocketmine\PATH . "src/pocketmine/lang/Installer/") as $file){
+			foreach(new \DirectoryIterator(\pocketmine\PATH . "src/pocketmine/lang/base/") as $file){
 				if($file->getExtension() === "ini" and substr($file->getFilename(), 0, 2) === $lang){
 					$files[$file->getFilename()] = $file->getSize();
 				}
@@ -38,14 +38,14 @@ class InstallerLang{
 				$l = key($files);
 				$l = substr($l, 0, -4);
 				$this->lang = isset(self::$languages[$l]) ? $l : $lang;
-				$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/Installer/" . $l . ".ini";
+				$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/base/" . $l . ".ini";
 			}else{
 				$this->lang = "en";
-				$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/Installer/eng.ini";
+				$this->langfile = \pocketmine\PATH . "src/pocketmine/lang/base/eng.ini";
 			}
 		}
 
-		$this->loadLang(\pocketmine\PATH . "src/pocketmine/lang/Installer/eng.ini", "eng");
+		$this->loadLang(\pocketmine\PATH . "src/pocketmine/lang/base/eng.ini", "eng");
 		if($this->lang !== "en"){
 			$this->loadLang($this->langfile, $this->lang);
 		}
