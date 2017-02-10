@@ -57,7 +57,7 @@ namespace pocketmine {
 
 	const VERSION = "1.1.0";
 	const API_VERSION = "3.0.0";
-	const CODENAME = "Ruby";
+	const CODENAME = "Crytall";
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
