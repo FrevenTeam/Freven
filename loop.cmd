@@ -1,5 +1,5 @@
 @echo off
-TITLE Tesseract server software for Minecraft: Pocket Edition
+TITLE Freven server software for Minecraft: Pocket Edition
 cd /d %~dp0
 netstat -o -n -a | findstr 0.0.0.0:19132>nul
 if %ERRORLEVEL% equ 0 (
@@ -35,7 +35,7 @@ if exist bin\php\php.exe (
 )
 
 if exist Tesseract*.phar (
-	set POCKETMINE_FILE=Tesseract*.phar
+	set POCKETMINE_FILE=Freven*.phar
 ) else (
 	if exist PocketMine-MP.phar (
 		set POCKETMINE_FILE=PocketMine-MP.phar
@@ -44,9 +44,9 @@ if exist Tesseract*.phar (
 	        set POCKETMINE_FILE=src\pocketmine\PocketMine.php
 		) else (
 			if exist Tesseract.phar (
-				set POCKETMINE_FILE=Tesseract.phar
+				set POCKETMINE_FILE=Freven.phar
 			) else (
-		        echo "[ERROR] Couldn't find a valid Tesseract installation."
+		        echo "[ERROR] Couldn't find a valid Freven installation."
 		        pause
 		        exit 8
 		    )
