@@ -6,7 +6,7 @@ if %ERRORLEVEL% equ 0 (
     echo Your server is running.
     goto :loop
 ) ELSE (
-    echo Starting your Tesseract server.
+    echo Starting your Freven server.
     goto :StartSrvr
 )
 
